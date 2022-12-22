@@ -1,3 +1,4 @@
+require("dotenv").config();
 //REQUIRE MODULES.
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -9,7 +10,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mailchimp.setConfig({
-  apiKey: "cecbf33da0dca7d9fe8ed285f558ccf9-us21",
+  apiKey: process.env.API_KEY,
   server: "us21",
 });
 
